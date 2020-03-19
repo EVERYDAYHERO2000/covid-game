@@ -477,7 +477,7 @@ canvas.addEventListener("click", e => {
 const spawnHead = () => {
   game.addObject();
   
-  setTimeout(spawnHead, (100-(game.score/5000)) + (Math.random() * 3500-(game.score/500)));
+  setTimeout(spawnHead, (1000-(game.score/5000)) + (Math.random() * 3500-(game.score/500)));
 };
 
 spawnHead();
