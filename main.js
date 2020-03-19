@@ -157,7 +157,7 @@ class SliceableObject extends GameObject {
     const pc = new PolygonCollider(); 
     pc.shape = shape;    
     rb.ignoreCollisionPhysics = true;
-    rb.velocity.y -=0.5 + (game.score/5000);
+    rb.velocity.y -=0.5// + (game.score/5000);
     rb.velocity.x = (Math.random() * splitSpeed) - (splitSpeed/2);
     const mask = new Mask();
     mask.offset = { x: 0, y: 0 };    
