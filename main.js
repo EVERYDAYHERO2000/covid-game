@@ -169,7 +169,6 @@ class SliceableObject extends GameObject {
     this.mask = mask;
     this.shape = shape;    
     this.sprite = sprite;
-    // this.sprite.scale = {x:0.1125,y:0.1125};
     this.sprite.addComponent(mask);    
 
     let n =  randomInteger(0, canvas.width/2)
@@ -410,8 +409,8 @@ function createHumanHeadPolygon() {
 
 const slicer = new Slicer();// new Line(new Point(0,0), new Point(0,0));
 
-const bloodSliceSprite = Sprite.fromUrl(
-  "https://s3-us-west-2.amazonaws.com/s.cdpn.io/163870/blood-splatter-1.png");
+//const bloodSliceSprite = Sprite.fromUrl(
+//  "https://s3-us-west-2.amazonaws.com/s.cdpn.io/163870/blood-splatter-1.png");
 const game = new Game();
 
 const draw   = () => {  
@@ -477,7 +476,8 @@ canvas.addEventListener("click", e => {
 
 const spawnHead = () => {
   game.addObject();
-  setTimeout(spawnHead, (1500-(game.score/5000)) + (Math.random() * 3500-(game.score/500)));
+  
+  setTimeout(spawnHead, (100-(game.score/5000)) + (Math.random() * 3500-(game.score/500)));
 };
 
 spawnHead();
