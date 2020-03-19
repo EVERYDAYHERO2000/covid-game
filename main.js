@@ -198,7 +198,9 @@ class SliceableObject extends GameObject {
     super.update();
     this.sprite.update();
     // is the object out of view? destroy it! This should also reduce our life by one.
-    if (this.sprite.position.y> canvas.height + this.sprite.height ) {
+    if (this.sprite.position.y > canvas.height + this.sprite.height && 
+      this.sprite.position.x > this.sprite.width &&
+      this.sprite.position.x < canvas.width + this.sprite.width) {
       if (!this.sliced && this.name == 'virus') game.removeHealth();
       if (!this.sliced && this.name == 'toilet') {
         game.score += 100;
